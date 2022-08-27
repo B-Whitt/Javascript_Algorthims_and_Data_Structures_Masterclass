@@ -1,5 +1,4 @@
-        @Auhtor
-        Sahr Thomas Acton
+
 
 <b> #### Currently at Lecture 27 #### </b>
         # Self note: I need to do lecture 27 again
@@ -20,13 +19,13 @@ and Dijkstra’s Shortest Path Algorithm.
 
 ## Modules
 
-- [x] Introduction - <b>Done </b>
-- [x] Big O Notation - <b>Done </b>
-- [x] Analyzing Performance of Arrays and Objects - <b>Done </b>
-- [x] Problem Solving Approach - <b>Done </b>
-- [x] Problem Solving Patterns - <b>Done </b>
-- [x] 100% OPTIONAL Challenges - <b>Skipped this - Need to come back to this </b>
-- [x] Recursion - <b>Done </b>
+- [ ] Introduction - <b>Done </b>
+- [ ] Big O Notation - <b>Done </b>
+- [ ] Analyzing Performance of Arrays and Objects - <b>Done </b>
+- [ ] Problem Solving Approach - <b>Done </b>
+- [ ] Problem Solving Patterns - <b>Done </b>
+- [ ] 100% OPTIONAL Challenges - <b>Skipped this - Need to come back to this </b>
+- [ ] Recursion - <b>Done </b>
 - [ ] Recursion Problem Set - <b>Done </b>
 - [ ] Bonus CHALLENGING Recursion Problems-  <b>Skipped this - Need to come back to this </b>
 - [ ] Searching Algorithms <b> Currently working on!</b>
