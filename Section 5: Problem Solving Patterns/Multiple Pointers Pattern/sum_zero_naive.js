@@ -1,3 +1,6 @@
+// This is O(n^2) "O of N squared" which is quadratic - BAAAADDDD!!!
+// nested loops is bad
+
 function sumZero(arr) {
     for (let i = 0; i < arr.length; i++){
         for (let j = i +1; j < arr.length; j++){
