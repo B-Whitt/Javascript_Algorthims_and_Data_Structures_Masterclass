@@ -15,6 +15,7 @@ function countUniqueValues(arr) {
 
 console.log(countUniqueValues([1, 1, 1, 1, 2, 2]));
 
+
 /* Time Complexity -  0(N)
 *  Space Complexity - 0(1)
 * */
