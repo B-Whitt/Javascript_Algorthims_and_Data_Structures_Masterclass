@@ -20,14 +20,54 @@ BW Questions:
 
 function sameFrequency(valueA, valueB) {
     // if the number of characters of valueA or valueB don't match return false
+    // let sameLength = (valueA.toString().length === valueB.toString().length) ? true : false;
+    valueA = valueA.toString().split('');
+    // console.log(valueA);
+    valueB = valueB.toString().split('');
+    // console.log(typeof(valueA));
+    if (valueA.length !== valueB.length){
+        return false;
+    } // else console.log("The values are the same length!")
+    // console.log(valueA.toString().length);
+    // console.log(valueB.toString().length);
     // if they do have the same char counts then check if one value exist in another    
-        // 
+        // create 2 object to hold char count of each value
+    valAobj = {};
+    valBobj = {};
+    // iterate each value sparately to count the fequncy of each int in value
+    // Compare Method # 1
     
+    // for(let int in valueA){
+    //     if (valAobj.hasOwnProperty(valueA[int])){
+    //         console.log("I have the same value" + valueA[int]);
+    //     } else console.log("I DON'T have the same value" + valueA[int]);
+    // }
+    for(let int of valueA){
+        if (valAobj.hasOwnProperty(int)){
+            valAobj[int] = valAobj[int] + 1;
+            // console.log(valAobj[int]);
+            // console.log("I have the same value: " + int);
+            // console.log(int);
+            console.log(valAobj);
+        } else {
+            valAobj[int] = 1;
+            // console.log("I DON'T have the same value: " + int);
+            // console.log(valAobj[int]);
+            // console.log(int);
+            console.log(valAobj);
+        };
+    }
+        // Compare 2 - during iteration of valB compare to obj of valA, if key exists subtract 1 from value
+            // if any value of objA is not Zero the frequency does not match, return false
 }
 
-console.log('1', sameFrequency(22, 222));
-console.log('2', sameFrequency(182, 281));
-console.log('3', sameFrequency(34, 14));
+console.log("***************************");
+console.log("***************************");
+console.log('1', sameFrequency(771, 777));
+console.log("***************************");
+console.log('2', sameFrequency(9829, 2899));
+console.log("***************************");
+console.log('3', sameFrequency(344, 434));
 
 
 
