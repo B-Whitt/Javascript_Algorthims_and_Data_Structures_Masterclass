@@ -21,49 +21,41 @@ BW Questions:
 function sameFrequency(valueA, valueB) {
     // if the number of characters of valueA or valueB don't match return false
     // let sameLength = (valueA.toString().length === valueB.toString().length) ? true : false;
-    valueA = valueA.toString().split('');
+    valueA = valueA.toString().split(''); // WIL'd -- int > str > array
     // console.log(valueA);
     valueB = valueB.toString().split('');
     // console.log(typeof(valueA));
     if (valueA.length !== valueB.length){
         return false;
-    } // else console.log("The values are the same length!")
-    // console.log(valueA.toString().length);
-    // console.log(valueB.toString().length);
+    } 
+    
     // if they do have the same char counts then check if one value exist in another    
         // create 2 object to hold char count of each value
-    valAobj = {};
-    valBobj = {};
-    // iterate each value sparately to count the fequncy of each int in value
-    // Compare Method # 1
+    let valAobj = {};
     
-    // for(let int in valueA){
-    //     if (valAobj.hasOwnProperty(valueA[int])){
-    //         console.log("I have the same value" + valueA[int]);
-    //     } else console.log("I DON'T have the same value" + valueA[int]);
-    // }
-    for(let int of valueA){
-        if (valAobj.hasOwnProperty(int)){
-            valAobj[int] = valAobj[int] + 1;
-            // console.log(valAobj[int]);
-            // console.log("I have the same value: " + int);
-            // console.log(int);
-            console.log(valAobj);
-        } else {
-            valAobj[int] = 1;
-            // console.log("I DON'T have the same value: " + int);
-            // console.log(valAobj[int]);
-            // console.log(int);
-            console.log(valAobj);
-        };
+    // iterate each value sparately to count the fequncy of each int in value
+    for(let i of valueA){
+        valAobj[i] = (valAobj[i] || 0)+ 1;
+        
+        // if (valAobj.hasOwnProperty(i)){
+        //     valAobj[i] = valAobj[i] + 1;
+        // } else {
+        //     valAobj[i] = 1;
+        // };
     }
-        // Compare 2 - during iteration of valB compare to obj of valA, if key exists subtract 1 from value
-            // if any value of objA is not Zero the frequency does not match, return false
+    // Compare - during iteration of valB compare to obj of valA, if key exists subtract 1 from value
+        // if any value of objA is not Zero the frequency does not match, return false
+    for(let j of valueB){
+        if(valAobj.hasOwnProperty(j) && (valAobj[j] > 0)){
+            valAobj[j] = valAobj[j] - 1;
+        } else return false
+    }  
+    return true
 }
 
 console.log("***************************");
 console.log("***************************");
-console.log('1', sameFrequency(771, 777));
+console.log('1', sameFrequency(771, 776));
 console.log("***************************");
 console.log('2', sameFrequency(9829, 2899));
 console.log("***************************");
