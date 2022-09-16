@@ -49,13 +49,11 @@ function areThereDuplicates(...args){
         console.log(v);
         console.log(numObj);
         if (numObj.hasOwnProperty(v)){
-            return false;
+            return true;
         } else numObj[v] = 1;
     }
+    return false;
 }
-
-
-
 
 console.log(areThereDuplicates(2,4,43));
 
