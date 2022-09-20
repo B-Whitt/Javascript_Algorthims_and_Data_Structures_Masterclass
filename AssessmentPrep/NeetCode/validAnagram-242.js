@@ -25,6 +25,37 @@ Follow up:
  * @param {string} t
  * @return {boolean}
  */
- var isAnagram = function(s, t) {
+
+/* BW Questions:
+-  
+
+*/
+
+var isAnagram = function(s, t) {
+    let obj1 = {};
+    let obj2 = {};
+    // verify length of both strings - if they do not match return false
+    // console.log(s.length);
+    if (s.length !== t.length) return false;
+    // iterate str1 to populate obj1 and number of times of each character
+    if (s.length > 0) {
+        for (let char of s){ 
+            obj1[char] = obj1[char] + 1 || 1;
+        }
+        for (let char of t){ 
+            obj2[char] = obj2[char] + 1 || 1;
+        }
+        console.log(obj1);
+        console.log(obj2);
+        let vals = Object.values(obj1);
+        for (let v of vals)
+    }
     
+    // iterate str2 to populate obj2 and number of times of each character
+    // compare values
+        // or iterate str2 and subtract 1 for every value and when a value goes below zero return false
+
+
 };
+
+console.log(isAnagram("bar", "cart"));
