@@ -31,31 +31,59 @@ Follow up:
 
 */
 
-var isAnagram = function(s, t) {
-    let obj1 = {};
-    let obj2 = {};
-    // verify length of both strings - if they do not match return false
-    // console.log(s.length);
-    if (s.length !== t.length) return false;
-    // iterate str1 to populate obj1 and number of times of each character
-    if (s.length > 0) {
-        for (let char of s){ 
-            obj1[char] = obj1[char] + 1 || 1;
-        }
-        for (let char of t){ 
-            obj2[char] = obj2[char] + 1 || 1;
-        }
-        console.log(obj1);
-        console.log(obj2);
-        let vals = Object.values(obj1);
-        for (let v of vals)
-    }
+// var isAnagram = function(s, t) {
+//     let objS = {};
+//     let objT = {};
+
+//     // verify length of both strings - if they do not match return false
+//     if (s.length !== t.length) return false;
+
+//     // iterate str1 to populate objS and number of times of each character
+//     if (s.length > 0) {
+//         for (let char of s){ 
+//             objS[char] = objS[char] + 1 || 1;
+//         }
+            // iterate str2 to populate objT and number of times of each character
+//         for (let char of t){ 
+//             objT[char] = objT[char] + 1 || 1;
+//         }
+//         console.log(objS);
+//         console.log(objT);
+//         // let valsS = Object.values(objS);
+//         for (let char of s){
+//             if (objT.hasOwnProperty(char) && objT[char] === objS[char] ){
+//                 console.log("Both obj have same key and value: " + char);
+                
+//             } else {
+//                 console.log("Both obj DO NOT have same key and value: " + char);
+//                 return false;
+//             }
+//         } return true;
+//     } else console.log("S Length is 0");
     
-    // iterate str2 to populate obj2 and number of times of each character
-    // compare values
-        // or iterate str2 and subtract 1 for every value and when a value goes below zero return false
 
 
+
+// Solution #2 iterate str2 and subtract 1 for every value and when a value goes below zero return false
+        var isAnagram = function(s, t) {
+            let objS = {};
+        
+            // verify length of both strings - if they do not match return false
+            if (s.length !== t.length) return false;
+        
+            // iterate str1 to populate objS and number of times of each character
+            if (s.length > 0) {
+                for (let char of s){ 
+                    objS[char] = objS[char] + 1 || 1;
+                }
+                for (let char of t){ 
+                    // objT[char] = objT[char] + 1 || 1;
+                    if (objS.hasOwnProperty(char) && objS[char] > 0){
+                        objS[char] = objS[char] - 1;
+                    } else return false;
+                }
+                return true;
+            } 
 };
 
 console.log(isAnagram("bar", "cart"));
