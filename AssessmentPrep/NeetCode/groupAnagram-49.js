@@ -30,17 +30,18 @@ var groupAnagrams = function(strs) {
     // let obj2 = {};
     let grpArr = [];
     let j = "test";
-    for (let i in strs){
-        j = strs[i + 1];
-        console.log(strs[i + 1]);
-        for (let char of strs[i]){
-            obj1[char] = obj1[char] + 1 || 1;
-            //console.log(obj1);
+    // for (let i in strs){
+    for (let i=0; i <= strs.length -1; i++){
+        console.log('i is: ' + i);      
+        let word = strs[i];
+        for (let idx=0; idx <= (word.length - 1); idx++){
+            console.log('word is: ' + word);
+            obj1[word[idx]] = obj1[word[idx]] + 1 || 1;
+            console.log(obj1);
         }
+        obj1 = {};
         
-        // if (obj1.hasOwnProperty()){
-
-        // }
+        // if (obj1.hasOwnProperty()){}
     }
     // compare to each, is annagram move to new array
 
